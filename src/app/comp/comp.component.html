@@ -1,0 +1,37 @@
+
+    <div id="imeto">
+        {{indeks + ". " + vozac?.name +" "+cuci}}  
+    </div>
+
+    <div id="slika">
+    <img [src]="vozac?.iconUrl" width="200" height="150" >
+    </div>
+    
+
+    <h4>
+        {{vozac?.team}}
+    </h4>
+
+    <p>
+        Points: {{vozac?.points}}
+    </p>
+
+    <div [ngSwitch]="vozac?.category">
+
+        <div *ngSwitchCase="'EXPERT'">EXPERT</div>
+        <div *ngSwitchCase="'LUNATIC'">5ARDA</div>
+        <div *ngSwitchCase="'ASD'">dusicka</div>
+        <div *ngSwitchDefault>No Comment</div>
+        
+    </div>
+
+    <div id="dugme">
+    <button (click)="onDrvView()">Klikni me</button>
+    </div>
+
+    <div>
+        &nbsp;
+    </div>
+
+    
+
