@@ -1,37 +1,41 @@
+<div [ngClass]="klasi()">
 
-    <div id="imeto">
+
+    <div id="imeto" role="heading" aria-level="2">
         {{indeks + ". " + vozac?.name +" "+cuci}}  
     </div>
 
     <div id="slika">
-    <img [src]="vozac?.iconUrl" width="200" height="150" >
+    <img [src]="vozac?.iconUrl" width="200" height="150" role="img" aria-hidden="false" aria-label="slika na motogp vozac" >
     </div>
     
 
-    <h4>
+    <h4 aria-level="4">
         {{vozac?.team}}
     </h4>
 
-    <p>
+    <p role="status" aria-live="polite" aria-atomic="true">
         Points: {{vozac?.points}}
     </p>
+    
 
     <div [ngSwitch]="vozac?.category">
 
-        <div *ngSwitchCase="'EXPERT'">EXPERT</div>
-        <div *ngSwitchCase="'LUNATIC'">5ARDA</div>
-        <div *ngSwitchCase="'ASD'">dusicka</div>
-        <div *ngSwitchDefault>No Comment</div>
+        <div *ngSwitchCase="'EXPERT'" aria-atomic="false">EXPERT</div>
+        <div *ngSwitchCase="'LUNATIC'" aria-atomic="false">5ARDA</div>
+        <div *ngSwitchCase="'ASD'" aria-atomic="false">dusicka</div>
+        <div *ngSwitchDefault aria-atomic="false">No Comment</div>
         
     </div>
 
     <div id="dugme">
-    <button (click)="onDrvView()">Klikni me</button>
+    <button (click)="onDrvView()" type="button" aria-expanded="false" aria-label="prikazi slika na vozacot vo drug tab">Klikni me</button>
     </div>
 
     <div>
         &nbsp;
     </div>
+</div>
 
     
 

@@ -1,8 +1,12 @@
 
-<app-comp *ngFor ="let drv of vozaci; index as i"
+<app-comp *ngFor ="let drv of vozaci; index as i; first as prv; last as posleden; odd as neparen; even as paren"
 
 [vozac] = "drv" (click)="onklik()"
 [indeks] ="i+1"
-[cuci] = "i+15">
+[cuci] = "i+15"
+[class.is-first]="prv"
+[class.is-even]="paren"
+[class.is-odd]="neparen"
+[class.is-last]="posleden">
 </app-comp>
 
